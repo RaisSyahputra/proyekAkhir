@@ -5,7 +5,7 @@
         - #HERO
       -->
 
-      <section class="hero">
+      <section class="hero" style="background-image: url('<?= BASEURL ?>/img/backgroundFilm.jpg');">
         <div class="container">
 
           <div class="hero-content">
@@ -70,18 +70,20 @@
 
 
           <ul class="movies-list">
+
             <?php foreach ( $data['movies'] as $movie ) : ?>
+
               <li>
                 <div class="movie-card">
               
-                  <a href="./movie-details.html">
+                  <a href="<?= BASEURL ?>/film/detail/<?= $movie['id_movies'] ?>">
                     <figure class="card-banner">
                       <img src="<?= BASEURL ?>/<?= $movie['poster'] ?>" alt="<?= $movie['title'] ?>movie poster">
                     </figure>
                   </a>
               
                   <div class="title-wrapper">
-                    <a href="./movie-details.html">
+                    <a href="<?= BASEURL ?>/film/detail/<?= $movie['id_movies']?>">
                       <h3 class="card-title"><?= $movie['title'] ?></h3>
                     </a>
                     <time datetime="<?= $movie['release_date'] ?>"><?= date('Y', strtotime($movie['release_date'])) ?></time>

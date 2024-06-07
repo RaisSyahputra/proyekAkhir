@@ -62,27 +62,19 @@
             color: #0071eb;
             text-decoration: none;
         }
-        
-        .register-container .recaptcha {
-            margin-top: 20px;
-            font-size: 12px;
-        }
+
     </style>
 </head>
 
 <body>
     <div class="register-container">
         <h1>Daftar</h1>
-        <form>
-            <input type="text" placeholder="Nama Lengkap" required>
-            <input type="email" placeholder="Email" required>
-            <input type="tel" placeholder="Nomor Ponsel" required>
-            <input type="password" placeholder="Sandi" required>
+        <form action="<?= BASEURL ?>/register/create" method="post"> 
+            <input type="email" name="email" placeholder="Email" required>
+            <input type="password" name="password" placeholder="Sandi" required>
             <button type="submit">Daftar</button>
-            <a href="login.html">Sudah punya akun? Masuk sekarang.</a>
-            <div class="recaptcha">
-                Halaman ini dilindungi oleh reCAPTCHA Google untuk memastikan kamu bukan bot. <a href="#">Pelajari selengkapnya.</a>
-            </div>
+
+            <a href="<?= BASEURL ?>/login">Sudah punya akun? Masuk sekarang.</a>
         </form>
     </div>
 </body>

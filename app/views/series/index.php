@@ -4,6 +4,59 @@
             - #TV SERIES
         -->
 
+        <section class="hero" style="background-image: url('<?= BASEURL ?>/img/backgroundSeries.jpg');">
+            <div class="container">
+
+                <div class="hero-content">
+
+                    <p class="hero-subtitle">Filmlane</p>
+
+                    <h1 class="h1 hero-title">
+                        Unlimited <strong>TV Series</strong>, TVs Shows, & More.
+                    </h1>
+
+                    <div class="meta-wrapper">
+
+                        <div class="badge-wrapper">
+                            <div class="badge badge-outline">HD</div>
+                        </div>
+
+                        <div class="ganre-wrapper">
+                            <a href="#">Action,</a>
+
+                            <a href="#">Adventure</a>
+                        </div>
+
+                        <div class="date-time">
+
+                            <div>
+                                <ion-icon name="calendar-outline"></ion-icon>
+
+                                <time datetime="2022">2022</time>
+                            </div>
+
+                            <div>
+                                <ion-icon name="time-outline"></ion-icon>
+
+                                <time datetime="PT128M">128 min</time>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <button class="btn btn-primary">
+                        <ion-icon name="play"></ion-icon>
+
+                        <span>Watch now</span>
+                    </button>
+
+                </div>
+
+            </div>
+        </section>
+        
+
         <section class="tv-series">
             <div class="container">
 
@@ -16,14 +69,14 @@
                         <li>
                             <div class="movie-card">
 
-                                <a href="./movie-details.html">
+                                <a href="<?= BASEURL ?>/series/detail/<?= $serie['id_series'] ?>">
                                     <figure class="card-banner">
                                         <img src="<?= BASEURL ?>/<?= $serie['poster'] ?>" alt="<?= $serie['title'] ?> poster">
                                     </figure>
                                 </a>
 
                                 <div class="title-wrapper">
-                                    <a href="./movie-details.html">
+                                    <a href="<?= BASEURL ?>/series/detail/<?= $serie['id_series'] ?>">
                                         <h3 class="card-title"><?= $serie['title'] ?></h3>
                                     </a>
 

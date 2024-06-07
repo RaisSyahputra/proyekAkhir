@@ -78,15 +78,15 @@
         <ul class="navbar-list">
 
           <li>
-            <a href="./index.html" class="navbar-link">Home</a>
+            <a href="<?= BASEURL ?>/home" class="navbar-link">Home</a>
           </li>
 
           <li>
-            <a href="#" class="navbar-link">Movie</a>
+            <a href="<?= BASEURL ?>/film" class="navbar-link">Movie</a>
           </li>
 
           <li>
-            <a href="#" class="navbar-link">Series</a>
+            <a href="<?= BASEURL ?>/series" class="navbar-link">Series</a>
           </li>
 
 

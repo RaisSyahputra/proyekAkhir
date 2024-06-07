@@ -73,22 +73,21 @@
 <body>
     <div class="login-container">
         <h1>Masuk</h1>
-        <form>
-            <input type="text" placeholder="Email atau nomor ponsel" required>
-            <input type="password" placeholder="Sandi" required>
+        <form method="POST" action="<?= BASEURL ?>/login">
+            <input type="text" name="email" placeholder="Email" required>
+            <input type="password" name="password" placeholder="Sandi" required>
             <button type="submit">Masuk</button>
-            <a href="#">Gunakan Kode Masuk</a>
-            <a href="#">Lupa sandi?</a>
+
             <div>
                 <input type="checkbox" id="ingat-saya" name="ingat-saya">
                 <label for="ingat-saya">Ingat saya</label>
             </div>
             <a href="<?= BASEURL ?>/register">Belum punya akun? Daftar sekarang.</a>
-            <div class="recaptcha">
-                Halaman ini dilindungi oleh reCAPTCHA Google untuk memastikan kamu bukan bot. <a href="#">Pelajari selengkapnya.</a>
-            </div>
+
         </form>
     </div>
 </body>
+
+</html>
 
 </html>
