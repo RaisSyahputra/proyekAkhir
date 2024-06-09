@@ -398,7 +398,6 @@ body.active { overflow: hidden; }
    */
 
   
-.btn-primary { display: none; }
 
 .menu-open-btn {
   color: var(--white);
@@ -927,8 +926,7 @@ body.active { overflow: hidden; }
    */
 
   
-   .header-actions .btn-primary { display: none; }
-
+  .header-actions .btn-primary {display: none;}
   /**
    * REUSED STYLE
    */
@@ -988,20 +986,11 @@ body.active { overflow: hidden; }
   .lang-wrapper option { color: var(--black); }
 
 
-
   /**
    * HERO
    */
 
   .hero-content { margin-top: 90px; }
-
-
-
-
-
-
-
-
 
 
   /**
@@ -1018,11 +1007,7 @@ body.active { overflow: hidden; }
   }
 
 
-
   .copyright { margin-bottom: 0; }
-
-
-
 
   /**
    * MOVIE DETAIL
@@ -1033,9 +1018,6 @@ body.active { overflow: hidden; }
   .detail-title { --fs-1: 50px; }
 
 }
-
-
-
 
 
 /**
@@ -1099,7 +1081,8 @@ body.active { overflow: hidden; }
    */
 
   
-   .header-actions .btn-primary { display: none; }
+  .btn-primary { display: none; }
+  .header-actions .btn-primary { display: block; }
 
 
   /**
@@ -1201,7 +1184,7 @@ body.active { overflow: hidden; }
    */
 
   
-   .header-actions .btn-primary { display: none; }
+   .btn-primary { display: none; }
   /**
    * HEADER
    */
