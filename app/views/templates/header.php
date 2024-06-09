@@ -50,16 +50,19 @@
           <label for="language">
           </label>
 
-
         </div>
 
-        <button class="btn btn-primary">Sign in</button>
+        <a href="<?php echo BASEURL; ?>/login/logout" class="btn btn-primary">Log Out</a>
 
       </div>
 
+
+      <a href="<?php echo BASEURL; ?>/login/logout" class="btn btn-primary">Log Out</a>
+      
       <button class="menu-open-btn" data-menu-open-btn>
         <ion-icon name="reorder-two"></ion-icon>
       </button>
+
 
       <nav class="navbar" data-navbar>
 
@@ -75,6 +78,9 @@
 
         </div>
 
+        
+
+        
         <ul class="navbar-list">
 
           <li>
@@ -89,10 +95,7 @@
             <a href="<?= BASEURL ?>/series" class="navbar-link">Series</a>
           </li>
 
-
         </ul>
-
-  
 
       </nav>
 

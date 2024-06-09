@@ -73,7 +73,7 @@
 <body>
     <div class="login-container">
         <h1>Masuk</h1>
-        <form method="POST" action="<?= BASEURL ?>/login">
+        <form method="POST" action="<?= BASEURL ?>/login/authenticate">
             <input type="text" name="email" placeholder="Email" required>
             <input type="password" name="password" placeholder="Sandi" required>
             <button type="submit">Masuk</button>

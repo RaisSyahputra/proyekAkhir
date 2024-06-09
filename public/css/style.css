@@ -392,6 +392,14 @@ body.active { overflow: hidden; }
 
 .header-actions { display: none; }
 
+  
+   /**
+   * Logout
+   */
+
+  
+.btn-primary { display: none; }
+
 .menu-open-btn {
   color: var(--white);
   font-size: 40px;
@@ -803,6 +811,12 @@ body.active { overflow: hidden; }
 .details-actions .btn-primary:is(:hover, :focus) { background: var(--citrine); }
 
 
+  
+   /**
+   * Logout
+   */
+
+  
 
 
 
@@ -831,7 +845,6 @@ body.active { overflow: hidden; }
     --fs-1: 42px;
 
   }
-
 
 
   /**
@@ -908,6 +921,13 @@ body.active { overflow: hidden; }
   }
 
 
+  
+   /**
+   * Logout
+   */
+
+  
+   .header-actions .btn-primary { display: none; }
 
   /**
    * REUSED STYLE
@@ -930,7 +950,6 @@ body.active { overflow: hidden; }
     gap: 35px;
   }
 
-  .header-actions .btn-primary { display: none; }
 
   .search-btn {
     position: relative;
@@ -1074,6 +1093,13 @@ body.active { overflow: hidden; }
 
   .overlay { display: none; }
 
+    
+   /**
+   * Logout
+   */
+
+  
+   .header-actions .btn-primary { display: none; }
 
 
   /**
@@ -1169,7 +1195,13 @@ body.active { overflow: hidden; }
   .movies-list { grid-template-columns: repeat(4, 1fr); }
 
 
+    
+   /**
+   * Logout
+   */
 
+  
+   .header-actions .btn-primary { display: none; }
   /**
    * HEADER
    */

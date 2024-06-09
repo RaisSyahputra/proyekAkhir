@@ -57,9 +57,14 @@ class Database {
 
     }
 
-    public function execute()
-    {
-        $this->stmt->execute();
+    public function execute(){
+        try {
+            return $this->stmt->execute();
+        } catch (PDOException $e) {
+            // You can also log the error message to a file
+            echo 'Database error: ' . $e->getMessage();
+            return false;
+        }
     }
 
     public function resultSet()

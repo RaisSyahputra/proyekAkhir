@@ -3,6 +3,12 @@
 class Home extends Controller{
     public function index()
     {
+        session_start();
+        if (!isset($_SESSION['user_id']) || !isset($_SESSION['user_email'])) {
+            // User is not logged in, redirect to login page
+            header('Location: ' . BASEURL . '/login');
+            exit();
+        }
         // Mengambil data dari film dan series
         $data['movies'] = $this->model('Film_model')->getAllFilm();
         $data['series'] = $this->model('Series_model')->getAllSeries();
@@ -16,7 +22,12 @@ class Home extends Controller{
 
     public function detail($id)
     {
-
+        session_start();
+        if (!isset($_SESSION['user_id']) || !isset($_SESSION['user_email'])) {
+            // User is not logged in, redirect to login page
+            header('Location: ' . BASEURL . '/login');
+            exit();
+        }
         $data['movies'] = $this->model('Film_model')->getFilmById($id);
 
         $this->view('templates/header');
