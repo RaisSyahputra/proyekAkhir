@@ -34,4 +34,30 @@ class Home extends Controller{
         $this->view('film/detail', $data);
         $this->view('templates/footer');
     }
+
+    public function upload()
+    {
+        session_start();
+        if (!isset($_SESSION['user_id']) || !isset($_SESSION['user_email'])) {
+            // User is not logged in, redirect to login page
+            header('Location: ' . BASEURL . '/login');
+            exit();
+        }
+
+
+        $this->view('home/upload');
+    }
+
+    public function edit()
+    {
+        session_start();
+        if (!isset($_SESSION['user_id']) || !isset($_SESSION['user_email'])) {
+            // User is not logged in, redirect to login page
+            header('Location: ' . BASEURL . '/login');
+            exit();
+        }
+
+
+        $this->view('home/edit');
+    }
 }

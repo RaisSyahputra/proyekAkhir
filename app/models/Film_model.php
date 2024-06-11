@@ -38,7 +38,21 @@ class Film_model {
         $this->db->bind(':id_movies', $id);
         return $this->db->single();
     }
-    
-    
+
+    public function getFilmFileById($id)
+    {
+        $this->db->query('SELECT file_path FROM movies WHERE id_movies = :id_movies');
+        $this->db->bind(':id_movies', $id);
+
+        $row = $this->db->single();
+
+        if ($row) {
+            return $row['file_path'];
+        } else {
+            return false;
+        }
+    }
+
+
 
 }

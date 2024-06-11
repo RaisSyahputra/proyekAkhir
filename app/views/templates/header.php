@@ -79,8 +79,6 @@
         </div>
 
         
-
-        
         <ul class="navbar-list">
 
           <li>
@@ -93,6 +91,10 @@
 
           <li>
             <a href="<?= BASEURL ?>/series" class="navbar-link">Series</a>
+          </li>
+
+          <li>
+            <a href="<?= BASEURL ?>/home/upload" class="navbar-link">Upload</a>
           </li>
 
         </ul>

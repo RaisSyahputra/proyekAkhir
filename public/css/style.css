@@ -1129,6 +1129,8 @@ body.active { overflow: hidden; }
   .movie-detail .container {
     position: relative;
     display: flex;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
     gap: 50px;
   }
@@ -1140,6 +1142,16 @@ body.active { overflow: hidden; }
 
 }
 
+  /**
+   * PLAY FILM
+   */
+
+
+.movie-detail-banner .container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
 
 

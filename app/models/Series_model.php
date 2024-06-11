@@ -39,6 +39,22 @@ class Series_model {
         $this->db->bind(':id_series', $id);
         return $this->db->single();
     }
+
+    public function getSeriesFileById($id)
+    {
+        $this->db->query('SELECT file_path FROM series WHERE id_series = :id_series');
+        $this->db->bind(':id_series', $id);
+
+        $row = $this->db->single();
+
+        if ($row) {
+            return $row['file_path'];
+        } else {
+            return false;
+        }
+    }
+
+    
     
 
 

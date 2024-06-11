@@ -7,9 +7,9 @@
       <div class="container">
         <figure class="movie-detail-banner">
           <img src="<?= BASEURL ?>/<?= $data['series']['poster'] ?>" alt="<?= $data['series']['title'] ?> poster">
-          <button class="play-btn">
+          <a href="<?= BASEURL ?>/series/play/<?= $data['series']['id_series'] ?>" class="play-btn">
             <ion-icon name="play-circle-outline"></ion-icon>
-          </button>
+          </a>
         </figure>
         <div class="movie-detail-content">
           <p class="detail-subtitle">___</p>
