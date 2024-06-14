@@ -39,6 +39,7 @@ class Login extends Controller {
                 session_start();
                 $_SESSION['user_id'] = $loggedInUser['account_id']; 
                 $_SESSION['user_email'] = $loggedInUser['email']; 
+                $_SESSION['role'] = $loggedInUser['role'];
                 // Redirect to a specific page
                 header('Location: ' . BASEURL . '/home');
                 exit();

@@ -99,6 +99,12 @@
                                     </div>
                                 </div>
 
+                                <div class="card-actions">
+                                    <button class="btn-update" onclick="location.href= '<?= BASEURL ?>/home/edit/<?= $serie['id_series'] ?>'">Update</button>
+                                    <button class="btn-delete" data-id="<?= $serie['id_series'] ?>">Delete</button>
+
+                                </div>
+
                             </div>
                         </li>
                     <?php endforeach; ?>
@@ -109,3 +115,25 @@
 
     </article>
 </main>
+
+<script>
+document.querySelectorAll('.btn-delete').forEach(function(button) {
+    button.addEventListener('click', function(e) {
+        e.preventDefault();
+
+        var id = this.getAttribute('data-id');
+
+        var xhr = new XMLHttpRequest();
+        xhr.open('POST', '<?= BASEURL ?>/series/delete/' + id, true);
+        xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
+        xhr.setRequestHeader('X-HTTP-Method-Override', 'DELETE');
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState == 4 && xhr.status == 200) {
+                alert('Series deleted successfully');
+                location.reload();
+            }
+        }
+        xhr.send();
+    });
+});
+</script>

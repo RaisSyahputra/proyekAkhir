@@ -36,4 +36,26 @@ class App {
         }
         return [];
     }
+
+
+    // public function parseURL() {
+    //     $request = $_SERVER['REQUEST_URI'];
+    //     $script = $_SERVER['SCRIPT_NAME'];
+    
+    //     // Remove script path from request URI
+    //     if (strpos($request, $script) === 0) {
+    //         $request = substr($request, strlen($script));
+    //     }
+    
+    //     // Remove leading and trailing slashes
+    //     $request = trim($request, '/');
+    
+    //     // Split the request into parts
+    //     $url = explode('/', $request);
+    
+    //     // Filter out empty parts
+    //     $url = array_filter($url);
+    
+    //     return $url;
+    // }
 }

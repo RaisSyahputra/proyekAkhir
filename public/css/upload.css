@@ -7,7 +7,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 150vh;
+    height: 170vh;
 }
 
 .container {
@@ -20,6 +20,14 @@ body {
     width: 100%;
     animation: fadeIn 1s ease-in-out;
     
+}
+
+.scrollable-checkbox-list {
+    max-height: 200px;
+    overflow-y: auto;
+    label {
+        color: white; 
+    }
 }
 
 @keyframes fadeIn {
@@ -40,6 +48,24 @@ h1 {
     margin-bottom: 25px;
     font-family: 'Georgia', serif;
     font-size: 24px;
+}
+
+select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #555;
+    border-radius: 5px;
+    box-sizing: border-box;
+    transition: all 0.3s;
+    font-size: 16px;
+    background-color: #222;
+    color: #fff;
+}
+
+select:focus {
+    border-color: #ffc107; /* Yellow border on focus */
+    outline: none;
+    box-shadow: 0 0 5px rgba(255, 193, 7, 0.5);
 }
 
 .form-group {
@@ -117,6 +143,9 @@ button:active {
     input[type="file"],
     textarea,
     button {
+        font-size: 14px;
+    }
+    select {
         font-size: 14px;
     }
 }

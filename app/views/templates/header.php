@@ -10,7 +10,7 @@
   <!-- 
     - favicon
   -->
-  <link rel="shortcut icon" href="<?= BASEURL ?>/img/favicon.svg" type="image/svg+xml">
+  <link rel="shortcut icon" href="<?= BASEURL ?>/img/FilmVerse.png" type="image/svg+xml">
 
   <!-- 
     - custom css link
@@ -37,7 +37,7 @@
       <div class="overlay" data-overlay></div>
 
       <a href="./index.html" class="logo">
-        <img src="<?= BASEURL ?>/img/logo.svg" alt="Filmlane logo">
+        <img src="<?= BASEURL ?>/img/FilmVerse.png" alt="Filmlane logo" width="100px" height="100px">
       </a>
 
       <div class="header-actions">
@@ -93,10 +93,11 @@
             <a href="<?= BASEURL ?>/series" class="navbar-link">Series</a>
           </li>
 
+          <?php if (isset($_SESSION['role']) && $_SESSION['role'] == 'admin') : ?>
           <li>
             <a href="<?= BASEURL ?>/home/upload" class="navbar-link">Upload</a>
           </li>
-
+          <?php endif; ?>
         </ul>
 
       </nav>

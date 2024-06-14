@@ -24,6 +24,7 @@ class Film_model {
 
         
     }
+    
 
     public function getFilmById($id)
     {
@@ -51,6 +52,83 @@ class Film_model {
         } else {
             return false;
         }
+    }
+
+    public function addMovie($title, $release_date, $poster, $file_path, $duration, $synopsis, $genre_ids)
+    {
+        // Insert into movies table
+        $this->db->query('INSERT INTO movies (title, release_date, poster, file_path, duration, synopsis) VALUES (:title, :release_date, :poster, :file_path, :duration, :synopsis)');
+        $this->db->bind(':title', $title);
+        $this->db->bind(':release_date', $release_date);
+        $this->db->bind(':poster', $poster);
+        $this->db->bind(':file_path', $file_path);
+        $this->db->bind(':duration', $duration);
+        $this->db->bind(':synopsis', $synopsis);
+        $this->db->execute();
+
+        // Get the id of the inserted movie
+        $movie_id = $this->db->lastInsertId();
+
+        // Insert into movie_genres table
+        foreach ($genre_ids as $genre_id) {
+            $this->db->query('INSERT INTO movie_genres (movie_id, genre_id) VALUES (:movie_id, :genre_id)');
+            $this->db->bind(':movie_id', $movie_id);
+            $this->db->bind(':genre_id', $genre_id);
+            $this->db->execute();
+        }
+
+        return $movie_id;
+    }
+
+    public function deleteMovie($id)
+    {
+        $this->db->query('DELETE FROM movie_genres WHERE movie_id = :id');
+        $this->db->bind(':id', $id);
+        $this->db->execute();
+
+        $this->db->query('DELETE FROM ' . $this->table . ' WHERE id_movies = :id');
+        $this->db->bind(':id', $id);
+        $this->db->execute();
+    }
+
+    public function updateFilmById($id, $title, $release_date, $poster, $file_path, $duration, $synopsis, $genre_ids) {
+        // Update movies table
+        $this->db->query('UPDATE movies SET title = :title, release_date = :release_date, poster = :poster, file_path = :file_path, duration = :duration, synopsis = :synopsis WHERE id_movies = :id_movies');
+        $this->db->bind(':id_movies', $id);
+        $this->db->bind(':title', $title);
+        $this->db->bind(':release_date', $release_date);
+        $this->db->bind(':poster', $poster);
+        $this->db->bind(':file_path', $file_path);
+        $this->db->bind(':duration', $duration);
+        $this->db->bind(':synopsis', $synopsis);
+        $this->db->execute();
+        
+    
+        // Delete existing genres
+        $this->db->query('DELETE FROM movie_genres WHERE movie_id = :movie_id');
+        $this->db->bind(':movie_id', $id);
+        $this->db->execute();
+    
+        // Insert new genres
+        foreach ($genre_ids as $genre_id) {
+            $this->db->query('INSERT INTO movie_genres (movie_id, genre_id) VALUES (:movie_id, :genre_id)');
+            $this->db->bind(':movie_id', $id);
+            $this->db->bind(':genre_id', $genre_id);
+            $this->db->execute();
+        }
+    
+        return $id;
+    }
+
+    public function getGenresById($id)
+    {
+        $this->db->query('
+            SELECT genres.*
+            FROM genres
+            WHERE genres.id_genre = :id_genre
+        ');
+        $this->db->bind(':id_genre', $id);
+        return $this->db->resultSet();
     }
 
 

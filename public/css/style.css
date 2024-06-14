@@ -332,6 +332,42 @@ body.active { overflow: hidden; }
   color: var(--citrine);
 }
 
+.card-actions {
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.btn-update,
+.btn-delete {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-size: 14px;
+}
+
+.btn-update {
+    background-color: #007bff;
+    /* Blue color */
+    color: #fff;
+}
+
+.btn-update:hover {
+    background-color: #0056b3;
+}
+
+.btn-delete {
+    background-color: #dc3545;
+    /* Red color */
+    color: #fff;
+}
+
+.btn-delete:hover {
+    background-color: #c82333;
+}
+
 /**
  * CUSTOM SLIDER & SCROLLBAR
  */

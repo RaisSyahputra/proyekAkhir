@@ -12,7 +12,6 @@
               Explore a Vast Collection of <strong>Films</strong> and <strong>Series</strong>.
             </h1>
 
-
             <div class="meta-wrapper">
 
               <div class="badge-wrapper">
@@ -102,8 +101,14 @@
   
                       <data>NR</data>
                     </div>
+
                   </div>
-  
+                  <div class="card-actions">
+                    <button class="btn-update"  onclick="location.href= '<?= BASEURL ?>/home/edit/<?= $movie['id_movies'] ?>'">Update</button>
+                    <button class="btn-delete" data-id="<?= $movie['id_movies'] ?>">Delete</button>
+
+                    
+                  </div>
                 </div>
               </li>
             <?php endforeach; ?>
@@ -154,6 +159,12 @@
 
                       <data>7.8</data>
                     </div>
+                  </div>
+
+                  <div class="card-actions">
+                    <button class="btn-update" onclick="location.href= '<?= BASEURL ?>/home/edit/<?= $movie['id_movies'] ?>'">Update</button>
+                    <button class="btn-delete" data-id="<?= $movie['id_movies'] ?>">Delete</button>
+
                   </div>
 
                 </div>
@@ -221,3 +232,26 @@
 
     </article>
   </main>
+
+
+<script>
+document.querySelectorAll('.btn-delete').forEach(function(button) {
+    button.addEventListener('click', function(e) {
+        e.preventDefault();
+
+        var id = this.getAttribute('data-id');
+
+        var xhr = new XMLHttpRequest();
+        xhr.open('POST', '<?= BASEURL ?>/home/delete/' + id, true);
+        xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
+        xhr.setRequestHeader('X-HTTP-Method-Override', 'DELETE');
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState == 4 && xhr.status == 200) {
+                alert('Movie deleted successfully');
+                location.reload();
+            }
+        }
+        xhr.send();
+    });
+});
+</script>
