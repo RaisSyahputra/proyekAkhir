@@ -104,11 +104,12 @@
                       <data>7.8</data>
                     </div>
                   </div>
+                  <?php if (isset($_SESSION['role']) && $_SESSION['role'] == 'admin') : ?>
                   <div class="card-actions">
                     <button class="btn-update" onclick="location.href= '<?= BASEURL ?>/home/edit/<?= $movie['id_movies'] ?>'">Update</button>
                     <button class="btn-delete" data-id="<?= $movie['id_movies'] ?>">Delete</button>
-
                   </div>
+                  <?php endif; ?>
                 </div>
               </li>  
             <?php endforeach; ?>

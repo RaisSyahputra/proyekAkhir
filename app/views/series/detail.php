@@ -39,18 +39,7 @@
             <?= $data['series']['synopsis'] ?>
           </p>
           <div class="details-actions">
-            <button class="share">
-              <ion-icon name="share-social"></ion-icon>
-              <span>Share</span>
-            </button>
-            <div class="title-wrapper">
-              <p class="title">Video</p>
-              <p class="text">Streaming Channels</p>
-            </div>
-            <button class="btn btn-primary">
-              <ion-icon name="play"></ion-icon>
-              <span>Watch Now</span>
-            </button>
+
           </div>
         </div>
       </div>

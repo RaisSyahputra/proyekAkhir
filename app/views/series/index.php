@@ -98,13 +98,12 @@
                                         <data>8.6</data>
                                     </div>
                                 </div>
-
+                                <?php if (isset($_SESSION['role']) && $_SESSION['role'] == 'admin') : ?>
                                 <div class="card-actions">
                                     <button class="btn-update" onclick="location.href= '<?= BASEURL ?>/home/edit/<?= $serie['id_series'] ?>'">Update</button>
                                     <button class="btn-delete" data-id="<?= $serie['id_series'] ?>">Delete</button>
-
                                 </div>
-
+                                <?php endif; ?>
                             </div>
                         </li>
                     <?php endforeach; ?>

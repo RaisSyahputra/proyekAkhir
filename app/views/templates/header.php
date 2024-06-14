@@ -42,10 +42,6 @@
 
       <div class="header-actions">
 
-        <button class="search-btn">
-          <ion-icon name="search-outline"></ion-icon>
-        </button>
-
         <div class="lang-wrapper">
           <label for="language">
           </label>
